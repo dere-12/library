@@ -23,30 +23,34 @@ addBookToLibrary("mee", "MEe", 233, false);
 
 console.log(myLibrary);
 
-const body = document.querySelector("body");
+const cards = document.querySelector(".cards");
+console.log(cards);
 
 function displayBooks() {
   myLibrary.forEach((item) => {
-    const div = document.createElement("div");
-    const p1 = document.createElement("p");
-    const p2 = document.createElement("p");
-    const p3 = document.createElement("p");
-    const p4 = document.createElement("p");
-    const p5 = document.createElement("p");
-
-    p1.textContent = item.title;
-    p2.textContent = item.author;
-    p3.textContent = item.pages;
-    p4.textContent = item.read;
-    p5.textContent = item.id;
-
-    div.appendChild(p5);
-    div.appendChild(p1);
-    div.appendChild(p2);
-    div.appendChild(p3);
-    div.appendChild(p4);
-    body.appendChild(div);
+    cards.innerHTML += `
+      <div>
+        <section>
+          <div>
+            <img
+              src="icon/book-open.svg"
+              width="150px"
+              alt="an icon of open book"
+            />
+          </div>
+          <div class="book-info">
+            <p>Title: ${item.title}</p>
+            <p>Author: ${item.author}</p>
+            <p>Pages: ${item.pages}</p>
+          </div>
+        </section>
+        <button class="remove btn">Remove</button>
+        <button class="read btn">${
+          item.read === true ? "Read" : "Not Read"
+        }</button>
+      </div>
+    `;
   });
 }
 
-// displayBooks();
+displayBooks();
