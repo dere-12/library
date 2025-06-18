@@ -4,13 +4,13 @@
 }
 
 * {
-  margin: 0;
   box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif, monospace;
   background-color: #dfdddd;
+  margin: 0;
 }
 
 input,
@@ -25,7 +25,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 3px solid rgba(0, 0, 0, 0.123);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.123);
   position: fixed;
   top: 0;
   z-index: 2;
@@ -86,7 +86,7 @@ main .cards > div section {
 }
 
 .book-info {
-  margin-top: 2.3rem;
+  margin-top: 1.5rem;
 }
 
 .book-info p {
@@ -120,4 +120,44 @@ main .cards > div section {
   bottom: 1rem;
   right: 1.8rem;
   color: #ffffff;
+}
+
+dialog {
+  border: 4px solid #1504fd69;
+  border-radius: 10px;
+}
+
+dialog p {
+  margin: 0 1.2rem 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+dialog form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 1rem;
+}
+
+dialog form div input {
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgb(202, 202, 202);
+}
+
+dialog form div input:focus {
+  border-color: #1616ff;
+}
+
+dialog section {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.527);
 }

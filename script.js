@@ -21,10 +21,10 @@ addBookToLibrary("m", "M", 2, false);
 addBookToLibrary("me", "ME", 23, true);
 addBookToLibrary("mee", "MEe", 233, false);
 
-console.log(myLibrary);
-
 const cards = document.querySelector(".cards");
-console.log(cards);
+const dialog = document.querySelector("dialog");
+const cancelDialog = document.querySelector("dialog .cancel");
+const newBookBtn = document.querySelector("header .new-book");
 
 function displayBooks() {
   myLibrary.forEach((item) => {
@@ -54,3 +54,7 @@ function displayBooks() {
 }
 
 displayBooks();
+
+newBookBtn.addEventListener("click", () => {
+  dialog.showModal();
+});

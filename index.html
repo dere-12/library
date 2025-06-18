@@ -18,6 +18,32 @@
     </header>
     <main>
       <div class="cards"></div>
+      <dialog>
+        <p>Fill out the form with the new book details.</p>
+        <form>
+          <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required />
+          </div>
+          <div>
+            <label for="author">Author:</label>
+            <input type="text" id="author" required />
+          </div>
+          <div>
+            <label for="pages">Number of pages:</label>
+            <input type="text" id="pages" required />
+          </div>
+          <div>
+            <label for="read">Read?</label>
+            <input type="text" id="read" required placeholder="yes or no" />
+          </div>
+          <section>
+            <button class="cancel btn" formmethod="dialog">Cancel</button>
+            <button class="btn">Discard</button>
+            <button class="btn">Save</button>
+          </section>
+        </form>
+      </dialog>
     </main>
     <script src="script.js"></script>
   </body>
