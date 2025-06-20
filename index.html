@@ -18,9 +18,10 @@
     </header>
     <main>
       <div class="cards"></div>
+
       <dialog>
         <p>Fill out the form with the new book details.</p>
-        <form>
+        <form method="dialog">
           <div>
             <label for="title">Title:</label>
             <input type="text" id="title" required />
@@ -38,9 +39,9 @@
             <input type="text" id="read" required placeholder="yes or no" />
           </div>
           <section>
-            <button class="cancel btn" formmethod="dialog">Cancel</button>
-            <button class="btn">Discard</button>
-            <button class="btn">Save</button>
+            <button class="cancel btn">Cancel</button>
+            <button type="button" class="discard btn">Discard</button>
+            <button class="save btn">Save</button>
           </section>
         </form>
       </dialog>
