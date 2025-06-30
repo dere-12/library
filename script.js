@@ -1,36 +1,36 @@
 let myLibrary = [];
 let exist = [];
 
-function Book(title, author, pages, read) {
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor");
+// Define the Book class
+class Book {
+  constructor(title, author, pages, read) {
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
   }
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+
+  toggleReadStatus() {
+    const readBtn = cards.querySelector(`[data-id="${this.id}"].read`);
+
+    if (readBtn.textContent === "Read") {
+      readBtn.textContent = "Not Read";
+      myLibrary.forEach((book) => {
+        if (book.id === this.id) {
+          book.read = false;
+        }
+      });
+    } else if (readBtn.textContent === "Not Read") {
+      readBtn.textContent = "Read";
+      myLibrary.forEach((book) => {
+        if (book.id === this.id) {
+          book.read = true;
+        }
+      });
+    }
+  }
 }
-
-Book.prototype.toggleReadStatus = function () {
-  const readBtn = cards.querySelector(`[data-id="${this.id}"].read`);
-
-  if (readBtn.textContent === "Read") {
-    readBtn.textContent = "Not Read";
-    myLibrary.forEach((book) => {
-      if (book.id === this.id) {
-        book.read = false;
-      }
-    });
-  } else if (readBtn.textContent === "Not Read") {
-    readBtn.textContent = "Read";
-    myLibrary.forEach((book) => {
-      if (book.id === this.id) {
-        book.read = true;
-      }
-    });
-  }
-};
 
 function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(new Book(title, author, pages, read));
