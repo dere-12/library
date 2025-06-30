@@ -1,7 +1,5 @@
 let myLibrary = [];
 let exist = [];
-
-// Define the Book class
 class Book {
   constructor(title, author, pages, read) {
     this.id = crypto.randomUUID();
